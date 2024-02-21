@@ -11,8 +11,9 @@ import java.util.Arrays;
 public class main_006 {
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
-        if (k == 0)
+        if (k == 0) {
             return;
+        }
         int tmpNums1[] = Arrays.copyOfRange(nums, nums.length - k, nums.length);
         int tmpNums2[] = Arrays.copyOf(nums, nums.length - k);
         System.arraycopy(tmpNums1, 0, nums, 0, tmpNums1.length);
