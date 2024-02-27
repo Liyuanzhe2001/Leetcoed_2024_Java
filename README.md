@@ -28,3 +28,41 @@ class Solution {
 mask ^= 1 << (c - 'a');
 ```
 
+### 质数判断
+```java
+public static boolean isPrime(int number) {
+    if (number <= 1) {
+        return false;
+    }
+    if (number == 2) {
+        return true;
+    }
+    if (number % 2 == 0) {
+        return false;
+    }
+    for (int i = 3; i <= Math.sqrt(number); i += 2) {
+        if (number % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+### 质数数组
+```java
+private final static int MX = (int) 1e5;
+// 质数=false 非质数=true
+private final static boolean[] np = new boolean[MX + 1];
+
+static {
+    np[1] = true;
+    for (int i = 2; i * i <= MX; i++) {
+        if (!np[i]) {
+            for (int j = i * i; j <= MX; j += i) {
+                np[j] = true;
+            }
+        }
+    }
+}
+```
