@@ -10,7 +10,7 @@ public class main_2575 {
     public int[] divisibilityArray(String word, int m) {
         int n = word.length();
         int[] res = new int[n];
-        longg sum = 0;
+        long sum = 0;
         for (int i = 0; i < n; i++) {
             sum = (sum * 10 + word.charAt(i) - '0') % m;
             if (sum == 0) {
