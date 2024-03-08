@@ -109,3 +109,22 @@ public int dijkstra(int n, int[][] roads) {
     }
 }
 ```
+
+二分查找
+```java
+public int search(int[] nums, int target) {
+    int lef = 0;
+    int rig = nums.length - 1;
+    while (lef <= rig) {
+        int mid = lef + (rig - lef) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            lef = mid + 1;
+        } else {
+            rig = mid - 1;
+        }
+    }
+    return -1;
+}
+```
