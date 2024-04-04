@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 
 public class main_1081 {
-    public String smallestSubsequence(String s) {
+    public String removeDuplicateLetters(String s) {
         int[] count = new int[26];
         for (char ch : s.toCharArray()) {
             count[ch - 'a']++;
